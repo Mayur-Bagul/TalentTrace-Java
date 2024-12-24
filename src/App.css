@@ -1,0 +1,175 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+.logo {
+  height: 6em;
+  padding: 1.5em;
+  will-change: filter;
+  transition: filter 300ms;
+}
+.logo:hover {
+  filter: drop-shadow(0 0 2em #646cffaa);
+}
+.logo.react:hover {
+  filter: drop-shadow(0 0 2em #61dafbaa);
+}
+
+@keyframes logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  a:nth-of-type(2) .logo {
+    animation: logo-spin infinite 20s linear;
+  }
+}
+
+.card {
+  padding: 2em;
+}
+
+.read-the-docs {
+  color: #888;
+}
+
+
+/* The overlay covers the whole screen */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.5); /* Semi-transparent black */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;  /* Ensures it is above other content */
+}
+
+/* The actual form container */
+.popup-form {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  width: 400px;  /* You can adjust the width as needed */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  z-index: 1001;
+  position: relative;
+}
+
+/* The close button inside the form */
+.close-button {
+  background-color: red;
+  color: white;
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  top: 10px;
+  right: 10px;
+}
+
+.close-button:hover {
+  background-color: darkred;
+}
+
+/* Style for form inputs */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  margin-top: 5px;
+}
+
+button[type="submit"] {
+  background-color: #7209b7;
+  color: white;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  width: 100%;
+}
+
+button[type="submit"]:hover {
+  background-color: #6006a5;
+}
+
+
+/* Style for the Update button */
+.update-btn {
+  width: 70px;   /* Square shape */
+  height: 45px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background-color: #4caf50;  /* Green background for Update */
+  border: none;
+  border-radius: 6px; /* Optional: rounded corners */
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  padding: 0;  /* Remove extra padding */
+  line-height: 50px;  /* Vertically center text */
+  margin-right: 10px; /* Gap between buttons */
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for Update button */
+.update-btn:hover {
+  background-color: #45a049; /* Darker green on hover */
+}
+
+/* Style for the Delete button */
+.delete-btn {
+  width: 70px;   /* Square shape */
+  height: 45px;
+  font-size: 18px;
+  font-weight: bold;
+  color: white;
+  background-color: #f44336; /* Red background for Delete */
+  border: none;
+  border-radius: 6px; /* Optional: rounded corners */
+  cursor: pointer;
+  text-align: center;
+  display: inline-block;
+  padding: 0;  /* Remove extra padding */
+  line-height: 50px;  /* Vertically center text */
+  margin-left: 10px; /* Gap between buttons */
+  transition: background-color 0.3s ease;
+}
+
+/* Hover effect for Delete button */
+.delete-btn:hover {
+  background-color: #e53935; /* Darker red on hover */
+}
+
+/* Optional: Disabled state for buttons */
+.update-btn:disabled, .delete-btn:disabled {
+  background-color: #ccc;
+  color: #666;
+  cursor: not-allowed;
+}
+
+
