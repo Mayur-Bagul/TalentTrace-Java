@@ -10,7 +10,7 @@ import axios from 'axios';
 
 const Login = () => {
   const [input, setInput] = useState({
-    username: '',
+    email: '',
     password: '',
   });
   const [errors, setErrors] = useState({});
@@ -22,7 +22,7 @@ const Login = () => {
 
   const validateInputs = () => {
     const errors = {};
-    if (!input.username.trim()) errors.username = 'Username is required.';
+    if (!input.email.trim()) errors.email = 'Email is required.';
     if (!input.password.trim()) errors.password = 'Password is required.';
     return errors;
   };
@@ -39,7 +39,7 @@ const Login = () => {
   
     try {
       const response = await axios.post('http://localhost:8088/api/auth/signin', {
-        username: input.username,
+        email: input.email,
         password: input.password,
       });
   
@@ -61,13 +61,13 @@ const Login = () => {
   
       switch (role) {
         case 'ROLE_ADMIN':
-          navigate('/admin');
+          navigate('/admin/users');
           break;
         case 'ROLE_USER':
-          navigate('/');
+          navigate('/user/Jobs');
           break;
         case 'ROLE_RECRUITER':
-          navigate('/companies');
+          navigate('/jobs');
           break;
         default:
           navigate('/');
@@ -96,17 +96,17 @@ const Login = () => {
             <div className="relative">
               <Input
                 type="text"
-                value={input.username}
-                name="username"
+                value={input.email}
+                name="email"
                 onChange={changeEventHandler}
                 placeholder=" "
                 className="peer mt-1 block w-full px-4 py-3 rounded-lg border border-gray-300 focus:ring-2 focus:ring-blue-500 focus:border-blue-500 shadow-sm transition-all duration-200 hover:shadow-md focus:shadow-lg"
               />
               <Label className="absolute left-4 top-2 text-gray-500 transition-all duration-200 peer-placeholder-shown:top-2 peer-placeholder-shown:text-sm peer-placeholder-shown:text-gray-500 peer-focus:top-0 peer-focus:text-xs peer-focus:text-blue-500">
-                Username
+                Email
               </Label>
-              {errors.username && (
-                <p className="text-red-500 text-sm">{errors.username}</p>
+              {errors.email && (
+                <p className="text-red-500 text-sm">{errors.email}</p>
               )}
             </div>
 

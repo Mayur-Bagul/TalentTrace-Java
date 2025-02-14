@@ -18,7 +18,7 @@ const JobAnalyticsChart = () => {
 
     return (
         <div>
-            <Navbar />
+            {/* <Navbar /> */}
         <motion.div
             className="bg-gray-800 bg-opacity-50 shadow-lg backdrop-blur-md rounded-xl p-5 text-center lg:col-span-2 border border-gray-700"
             initial={{ opacity: 0, y: 25 }}

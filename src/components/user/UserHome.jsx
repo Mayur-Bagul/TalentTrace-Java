@@ -7,6 +7,7 @@ import Footer from '../shared/Footer'
 import useGetAllJobs from '@/hooks/useGetAllJobs'
 import { useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
+import UNavbar from '../shared/UserNav';
 
 const Home = () => {
   useGetAllJobs();
@@ -19,7 +20,7 @@ const Home = () => {
   }, []);
   return (
     <div>
-      <Navbar />
+      <UNavbar />
       <HeroSection/>
       <CategoryCarousel/>
       <Footer />

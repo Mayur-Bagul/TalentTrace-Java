@@ -6,6 +6,7 @@ import { Button } from '../ui/button';
 import CompaniesTable from './CompaniesTable';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import RNavbar from '../shared/Recruiter_nav';
 
 
 const Companies = () => {
@@ -39,14 +40,14 @@ const Companies = () => {
 
   return (
     <div>
-         <Navbar />
+         <RNavbar />
       <div className="max-w-6xl mx-auto my-10">
         <div className="flex items-center justify-between my-5">
-          <Input
+          {/* <Input
             className="w-fit"
             placeholder="Filter by name"
             onChange={(e) => setInput(e.target.value)}
-          />
+          /> */}
           <Button onClick={() => navigate("/set-companies")}>New Company</Button>
         </div>
         <CompaniesTable companies={filteredCompanies} />

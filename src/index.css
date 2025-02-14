@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100;200;300;400;500;600;700;800;900&display=swap");
 @tailwind base;
   @tailwind components;
   @tailwind utilities;
@@ -73,4 +74,19 @@
     body {
       @apply bg-background text-foreground;
     }
+  }
+
+  
+
+  /* body {
+    background-color: #d0bdd4 !important;
+    font-family: "Inter", sans-serif;
+  } */
+  
+  ::-webkit-scrollbar {
+    width: 3.5px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #464b50;
   }

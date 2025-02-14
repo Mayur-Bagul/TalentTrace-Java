@@ -7,6 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import { toast } from 'sonner';
 import Companies from './Companies';
 import axios from 'axios';
+import RNavbar from '../shared/Recruiter_nav';
 
 const CompanyCreate = () => {
     const navigate = useNavigate();
@@ -45,7 +46,7 @@ const CompanyCreate = () => {
   
     return (
       <div>
-        <Navbar />
+        <RNavbar />
         <div className='max-w-4xl mx-auto'>
           <div className='my-10'>
             <h1 className='font-bold text-2xl'>Your Company Name</h1>

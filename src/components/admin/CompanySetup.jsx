@@ -378,6 +378,7 @@ import { Input } from '../ui/input';
 import { useNavigate, useParams } from 'react-router-dom';
 import { toast } from 'sonner';
 import axios from 'axios';
+import RNavbar from '../shared/Recruiter_nav';
 
 const CompanySetup = () => {
     const params = useParams();
@@ -467,7 +468,7 @@ const CompanySetup = () => {
 
     return (
         <div>
-            <Navbar />
+            <RNavbar />
             <div className='max-w-xl mx-auto my-10'>
                 <form onSubmit={submitHandler}>
                     <div className='flex items-center gap-5 p-8'>

@@ -1,17 +1,12 @@
-/*import React, { useState } from 'react';
-import Navbar from './shared/Navbar';
-import FilterCard from './FilterCard';
-import Job from './Job'; 
-import JobApplicationForm from './JobApplicationForm';  */
 
 import React, {useEffect, useState } from 'react';
 import Navbar from "../shared/Navbar";
-import FilterCard from "./FilterCard";
 import Job from "./Job";
 import JobApplicationForm from "./JobApplicationForm";
 import jobService from '@/service/jobService';
 import { toast } from 'react-toastify';
 
+import UNavbar from '../shared/UserNav';
 
 
 
@@ -45,6 +40,9 @@ const Jobs = () => {
       .catch(error => toast.error('Error updating job application'));
   };
 
+  const handleApplyNow = () => setShowForm(true);
+  const handleCloseForm = () => setShowForm(false);
+
   const handleDeleteJob = (id) => {
     jobService.deleteJobApplication(id)
       .then(response => {
@@ -56,33 +54,20 @@ const Jobs = () => {
 
   return (
     <div>
-      <Navbar />
+      <UNavbar />
       <div className="max-w-7xl mx-auto mt-5">
         <div className="flex gap-5">
-          <div className="w-1/5">
-            <FilterCard />
+          {/* <div className="w-1/5"> */}
+           
           </div>
 
-          <div className="flex-1 h-[88vh] overflow-y-auto pb-5">
-            {loading ? (
-              <p>Loading jobs...</p>
-            ) : error ? (
-              <p className="text-red-500">{error}</p>
-            ) : jobs.length === 0 ? (
-              <span>No jobs found</span>
-            ) : (
-              <div className="grid grid-cols-3 gap-4">
-                {jobs.map((job) => (
-                  <div key={job.id}>
-                    <Job job={job} onApply={() => handleAddJob(job)} />
-                  </div>
-                ))}
-              </div>
-            )}
+          {/* Render Job component, which now fetches jobs independently */}
+          <div className="flex-1 pb-5">
+            <Job />
           </div>
         </div>
       </div>
-    </div>
+    
   );
 };
 

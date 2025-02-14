@@ -9,6 +9,7 @@ import { useNavigate } from 'react-router-dom';
 import { Loader2 } from 'lucide-react';
 import AdminJobs from './AdminJobs';
 import axios from 'axios';
+import RNavbar from '../shared/Recruiter_nav';
 
 const PostJob = () => {
     const [input, setInput] = useState({
@@ -30,8 +31,8 @@ const PostJob = () => {
     useEffect(() => {
         const fetchCompanies = async () => {
             try {
-                const response = await axios.get('http://localhost:8081/companies/all'); // Your backend URL
-                console.log("Fetched companies:", response.data);  // Log the fetched companies for debugging purposes
+                const response = await axios.get('http://localhost:8081/companies/all'); 
+                console.log("Fetched companies:", response.data);  
                 setCompanies(response.data);
             } catch (error) {
                 console.error("Error fetching companies:", error);
@@ -60,7 +61,7 @@ const PostJob = () => {
         setLoading(true);
         
         try {
-            const response = await axios.post('http://localhost:8081/Job', input); // POST request to create the job
+            const response = await axios.post('http://localhost:8081/Job', input); 
             if (response.status === 201) {
                 toast.success("Job posted successfully!");
                 navigate("/jobs");
@@ -75,7 +76,7 @@ const PostJob = () => {
 
     return (
         <div>
-            <Navbar />
+            <RNavbar />
             <div className="flex items-center justify-center w-screen my-5">
                 <form onSubmit={submitHandler} className="p-8 max-w-4xl border border-gray-200 shadow-lg rounded-md">
                     <div className="grid grid-cols-2 gap-2">

@@ -9,7 +9,7 @@ const UsersPageTable = () => {
 
     useEffect(() => {
         // Fetch users from the backend
-        axios.get('http://localhost:8080/api/users')
+        axios.get('http://localhost:8088/api/users/all')
             .then(response => {
                 setUsers(response.data); // Store the users' data in state
             })
@@ -21,7 +21,7 @@ const UsersPageTable = () => {
 
     const handleDelete = (userId) => {
         // Delete the user by ID (optional functionality)
-        axios.delete(`http://localhost:8080/api/users/${userId}`)
+        axios.delete(`http://localhost:8088/api/users/${userId}`)
             .then(() => {
                 // Remove the deleted user from the list
                 setUsers(users.filter(user => user.id !== userId));

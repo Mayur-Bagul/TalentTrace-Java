@@ -23,6 +23,18 @@ import OTPVerification from './components/auth/OTPVerification'
 import ProtectedRoute from './components/protectedRoute/ProtectedRoute'
 import Sidebar from './components/adminPanel/common_components/Sidebar'
 import adminRoutes from './routes/adminRoutes'
+import AddJobForm from './components/user/AddJobForm'
+
+
+import Video from "./components/Video/Video";
+import FormCard from "./components/FormCard/FormCard";
+import NavBar from "./components/NavBar/NavBar";
+import IncomingCall from "./components/IncomingCall/IncomingCall";
+
+import {VideoCallProvider} from "./context/Context"
+
+
+
 
 //user routes
 
@@ -32,6 +44,18 @@ const appRouter = createBrowserRouter([
     path: '/',
     element: <Home />
   },
+  {
+    path: '/chat',
+    element: (
+      <VideoCallProvider>
+        {/* <NavBar /> */}
+        <Video />
+        <FormCard />
+        <IncomingCall />
+      </VideoCallProvider>
+    ),
+  },
+  
   {
     path: '/login',
     element: <Login />
@@ -88,15 +112,15 @@ const appRouter = createBrowserRouter([
 {
     path: '/applicants',
     element: <Applicants /> // list of applicants
-  },
-  {
+},
+{
     path: '/jobs',
     element: <AdminJobs /> // list of jobs + create jobs
-  },
-  {
+},
+{
     path: '/recPage',
     element: < RecruiterCompany /> // post new job
-  },
+},
 
   //User routes start from here
   {
@@ -118,17 +142,19 @@ const appRouter = createBrowserRouter([
   },
 
   {
-    path: '/user/AppForm',
+    path: '/user/Jobform/:id',
+    element: <AddJobForm /> // User Job application
+  },
+  {
+    path: '/user/AppForm/:id',
     element: <JobApplicationForm /> // User Job application Form
   },
-
   {
-    path: '/user/JobDesc',
+    path: '/user/JobDescription/:id',
     element: <JobDescription /> // User Job description
   },
 
-
-  {
+{
     path: '/admin/*',
     element: (
       <div>
@@ -140,9 +166,7 @@ const appRouter = createBrowserRouter([
             <div className="absolute inset-0 backdrop-blur-3xl" />
           </div>
   
-      
           <Sidebar />
-  
          
           <div className="flex-1 p-4 overflow-y-auto">
             <Routes>
@@ -159,15 +183,8 @@ const appRouter = createBrowserRouter([
       </ProtectedRoute>
       </div>
     ),
-  },
+},
 
-
-
-
-  
-
-  
-  
 
 ])
 function App() {

@@ -9,6 +9,8 @@ import { setSearchJobByText } from '@/redux/jobSlice';
 import PostJob from './PostJob';
 import CompanyCreate from './CompanyCreate';
 import axios from 'axios';
+import RNavbar from '../shared/Recruiter_nav';
+
 
 const AdminJobs = () => {
   const navigate = useNavigate();
@@ -44,14 +46,14 @@ const AdminJobs = () => {
 
   return (
     <div>
-      <Navbar />
+      <RNavbar />
       <div className="max-w-6xl mx-auto my-10">
         <div className="flex items-center justify-between my-5">
-          <Input
+          {/* <Input
             className="w-fit"
             placeholder="Filter by name, role"
             onChange={(e) => setInput(e.target.value)}
-          />
+          /> */}
           <Button onClick={() => navigate('/postjobs')}>New Jobs</Button>
         </div>
         {/* Pass filtered jobs to the table */}

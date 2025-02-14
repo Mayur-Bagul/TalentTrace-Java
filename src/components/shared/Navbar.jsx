@@ -143,25 +143,29 @@ const Navbar = () => {
                     <ul className="flex font-medium items-center gap-5">
                         {user && user.role === 'recruiter' ? (
                             <>
-                                <li><Link to="/companies">Companies</Link></li>
-                                <li><Link to="/jobs">Jobs</Link></li>
+                                {/* <li><Link to="/companies">Companies</Link></li> */}
+                                {/* <li><Link to="/jobs">Jobs</Link></li> */}
                             </>
                         ) : (
                             <>
                                 <li><Link to="/">Home</Link></li>
-                                <li><Link to="/jobs">Jobs</Link></li>
+                                {/* <li><Link to="/jobs">Jobs</Link></li>
                                 <li><Link to="/companies">Companies</Link></li>
+                                <li><Link to="/user/Jobs">Available Jobs</Link></li>
+                                <li><Link to="/user/JobTable">AppliedJob</Link></li> 
+                                <li><Link to="/applicants">Applicants</Link></li> */}
+
                             </>
                         )}
                     </ul>
                     {!user ? (
                         <div className="flex items-center gap-4">
-                            <Link to="/chat">
+                            {/* <Link to="/chat">
                                 <Button variant="outline" className="flex items-center gap-2">
                                     <MessageCircle className="w-5 h-5" />
                                     Chat
                                 </Button>
-                            </Link>
+                            </Link> */}
                             <Link to="/login">
                                 <Button variant="outline">Login</Button>
                             </Link>

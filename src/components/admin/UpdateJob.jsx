@@ -8,6 +8,7 @@ import { toast } from 'sonner';
 import { useNavigate, useParams } from 'react-router-dom';
 import { Loader2 } from 'lucide-react';
 import axios from 'axios';
+import RNavbar from '../shared/Recruiter_nav';
 
 const UpdateJob = () => {
     const { jobId } = useParams(); // Get jobId from route
@@ -100,7 +101,7 @@ const UpdateJob = () => {
 
     return (
         <div>
-            <Navbar />
+            <RNavbar />
             <div className="flex items-center justify-center w-screen my-5">
                 <form onSubmit={submitHandler} className="p-8 max-w-4xl border border-gray-200 shadow-lg rounded-md">
                     <div className="grid grid-cols-2 gap-2">
