@@ -1,0 +1,13 @@
+{"properties": [
+  {
+    "name": "pratik.app.jwtExpirationMs",
+    "type": "java.lang.String",
+    "description": "A description for 'pratik.app.jwtExpirationMs'"
+  },
+ 
+  {
+    "name": "pratik.app.jwtSecret",
+    "type": "java.lang.String",
+    "description": "A description for 'pratik.app.jwtSecret'"
+  }
+]}
